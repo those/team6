@@ -97,9 +97,11 @@ public class NoSqlInjection1 extends HttpServlet
 				// if it's a member of a replica set:
 				mongoClient = new MongoClient();
 				
+				String strPasswd = System.getProperty("SHEPERD_DB_PSWD");
+				
 				user = "gamer1";
 				database = "shepherdGames";
-				password = new char[]{ '$', 'e', 'c', 'S', 'h', '3', 'p', 'd', 'b' };
+				password = strPasswd != null ? strPasswd.toCharArray() : new char[0];
 				
 				credential = MongoCredential.createCredential(user, database, password);
 				mongoDb = mongoClient.getDB("shepherdGames");

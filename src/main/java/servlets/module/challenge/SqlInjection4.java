@@ -85,11 +85,8 @@ public class SqlInjection4 extends HttpServlet
 				theUserName = SqlFilter.levelFour(theUserName);
 				log.debug("Filtered to " + theUserName);
 				String thePassword = request.getParameter("thePassword");
-				log.debug("thePassword Submitted - " + thePassword);
 				thePassword = SqlFilter.levelFour(thePassword);
-				log.debug("Filtered to " + thePassword);
 				String ApplicationRoot = getServletContext().getRealPath("");
-				log.debug("Servlet root = " + ApplicationRoot );
 				
 				log.debug("Getting Connection to Database");
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeFour");

@@ -286,7 +286,7 @@ public class Setter
 			writer = new DataOutputStream(new FileOutputStream(siteProperties,false));
 			theProperties = new String("databaseConnectionURL=core"+					
 					"\ndatabaseUsername=" + userName +
-					"\ndatabasePassword=" + password);
+					"\npassword is set");
 			writer.write(theProperties.getBytes());
 			writer.close();
 			return true;
