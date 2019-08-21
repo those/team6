@@ -132,4 +132,19 @@ public class OneTimePad {
 
 		  return FileInputProperties.readfile(CRYPTO_PROPERTIES, "crypto.key");
 	  }
+	  
+	  
+	  public static void main(String[] args)throws Exception {
+		  blah("k61dSmsM*8n");
+		  blah("1nforma1ion");
+		  blah("ch3fBrownSa4useIsS00000Go0d");
+		  blah("ch3fBrownSa4useIsS00000Go0d");
+		  blah("ch3fBrownSa4useIsS00000Go0d");
+		  blah("firstBlooded");
+		  blah("91dj3:766f");
+	}
+	  
+	  public static void blah(String in) throws Exception{
+		System.out.println(in + " >> "+OneTimePad.encrypt(in, "SuperKalaFragalisticExpeAloDocious"));  
+	  }
 }

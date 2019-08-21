@@ -92,7 +92,7 @@ public class SecurityMisconfigStealTokens extends HttpServlet
 					}
 				}
                 String cookieValue = "";
-                if (!Objects.isNull(theToken)){
+                if (theToken != null){
                     cookieValue = theToken.getValue();
 				}
 

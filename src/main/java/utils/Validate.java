@@ -239,7 +239,7 @@ public class Validate
 						String role = (String) ses.getAttribute("userRole");
 						result = (role.compareTo("admin") == 0);
 						if(!result)
-							log.fatal("User " + userName + " Attempting Admin functions! (CSRF Tokens Not Checked)");
+							log.fatal("User name attempting Admin functions! (CSRF Tokens Not Checked)");
 					} 
 					catch (Exception e) 
 					{
@@ -291,9 +291,9 @@ public class Validate
 							//Check CSRF Tokens of User to ensure they are not being CSRF'd into causing Unauthorised Access Alert
 							boolean validCsrfTokens = validateTokens(cookieToken, requestToken);
 							if(validCsrfTokens)
-								log.fatal("User account " + userName + " Attempting Admin functions! (With Valid CSRF Tokens)");
+								log.fatal("User account Attempting Admin functions! (With Valid CSRF Tokens)");
 							else
-								log.error("User account " + userName + " accessing admin function with bad CSRF Tokens");
+								log.error("User account accessing admin function with bad CSRF Tokens");
 						}
 							
 					} 
@@ -441,7 +441,7 @@ public class Validate
 						String role = (String) ses.getAttribute("userRole");
 						result = (role.compareTo("player") == 0 || role.compareTo("admin") == 0);
 						if(!result)
-							log.fatal("User Role Parameter Tampered. Role = " + role);
+							log.fatal("User Role Parameter Tampered.");
 						else
 						{
 							String userName = ses.getAttribute("userName").toString();
