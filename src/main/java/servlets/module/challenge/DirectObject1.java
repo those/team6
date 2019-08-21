@@ -74,33 +74,36 @@ public class DirectObject1 extends HttpServlet
 			try
 			{
 				String userId = request.getParameter("userId[]");
-				log.debug("User Submitted - " + userId);
-				String ApplicationRoot = getServletContext().getRealPath("");
-				log.debug("Servlet root = " + ApplicationRoot );
-				String htmlOutput = new String();
-				
-				Connection conn = Database.getChallengeConnection(ApplicationRoot, "directObjectRefChalOne");
-				PreparedStatement prepstmt = conn.prepareStatement("SELECT userName, privateMessage FROM users WHERE userId = ?");
-				prepstmt.setString(1, userId);
-				ResultSet resultSet = prepstmt.executeQuery();
-				if(resultSet.next())
-				{
-					log.debug("Found user: " + resultSet.getString(1));
-					String userName = resultSet.getString(1);
-					String privateMessage = resultSet.getString(2);
-					htmlOutput = "<h2 class='title'>" + userName + "'s " + bundle.getString("response.message") + "</h2>" +
-							"<p>" + privateMessage + "</p>";
-				}
-				else
-				{
-					log.debug("No Profile Found");
-					
-					htmlOutput = "<h2 class='title'>" + bundle.getString("response.notFound") + "</h2><p>" + bundle.getString("response.notFoundMessage.1") + " '" + Encode.forHtml(userId) + "' " + bundle.getString("response.notFoundMessage.2") + "</p>";
-				}
-				log.debug("Outputting HTML");
 
-				out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
-				Database.closeConnection(conn);
+				if(userId.equals(ses.getAttribute("userStamp"))) {
+					log.debug("User Submitted - " + userId);
+					String ApplicationRoot = getServletContext().getRealPath("");
+					log.debug("Servlet root = " + ApplicationRoot );
+					String htmlOutput = new String();
+
+					Connection conn = Database.getChallengeConnection(ApplicationRoot, "directObjectRefChalOne");
+					PreparedStatement prepstmt = conn.prepareStatement("SELECT userName, privateMessage FROM users WHERE userId = ?");
+					prepstmt.setString(1, userId);
+					ResultSet resultSet = prepstmt.executeQuery();
+					if(resultSet.next())
+					{
+						log.debug("Found user: " + resultSet.getString(1));
+						String userName = resultSet.getString(1);
+						String privateMessage = resultSet.getString(2);
+						htmlOutput = "<h2 class='title'>" + userName + "'s " + bundle.getString("response.message") + "</h2>" +
+								"<p>" + privateMessage + "</p>";
+					}
+					else
+					{
+						log.debug("No Profile Found");
+
+						htmlOutput = "<h2 class='title'>" + bundle.getString("response.notFound") + "</h2><p>" + bundle.getString("response.notFoundMessage.1") + " '" + Encode.forHtml(userId) + "' " + bundle.getString("response.notFoundMessage.2") + "</p>";
+					}
+					log.debug("Outputting HTML");
+
+					out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
+					Database.closeConnection(conn);
+				}
 			}
 			catch(Exception e)
 			{
