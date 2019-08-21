@@ -128,7 +128,7 @@ public class OneTimePad {
 
 	  public static String getKey() throws IOException {
 	      String basePath = new File("./").getCanonicalPath();
-		  String CRYPTO_PROPERTIES = "/src/main/resources/crypto.properties";
+		  String CRYPTO_PROPERTIES = basePath + "/src/main/resources/crypto.properties";
 
 		  return FileInputProperties.readfile(CRYPTO_PROPERTIES, "crypto.key");
 	  }
