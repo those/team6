@@ -99,7 +99,7 @@ public class DirectObject2 extends HttpServlet
 					htmlOutput = "<h2 class='title'>" + bundle.getString("response.notFound") + "</h2><p>" + bundle.getString("response.notFoundMessage.1") + " '" + Encode.forHtml(userId) + "' " + bundle.getString("response.notFoundMessage.2") + "</p>";
 				}
 				log.debug("Outputting HTML");
-				out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
+				out.write(Sanitizers.BLOCKS.sanitize(htmlOutput));
 				Database.closeConnection(conn);
 			}
 			catch(Exception e)

@@ -99,7 +99,7 @@ public class DirectObject1 extends HttpServlet
 				}
 				log.debug("Outputting HTML");
 
-				out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
+				out.write(Sanitizers.BLOCKS.sanitize(htmlOutput));
 				Database.closeConnection(conn);
 			}
 			catch(Exception e)

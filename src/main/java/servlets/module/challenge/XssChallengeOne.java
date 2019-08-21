@@ -100,7 +100,7 @@ public class XssChallengeOne extends HttpServlet
 						searchTerm +
 						"</p>";
 					log.debug("Outputting HTML");
-					out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
+					out.write(Sanitizers.BLOCKS.sanitize(htmlOutput));
 				}
 			}
 		}
