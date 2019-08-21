@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javax.servlet.ServletException;
@@ -90,12 +91,15 @@ public class SecurityMisconfigStealTokens extends HttpServlet
 						break; //End Loop, because we found the token
 					}
 				}
-				String cookieValue = theToken.getValue();
-				
+                String cookieValue = "";
+                if (!Objects.isNull(theToken)){
+                    cookieValue = theToken.getValue();
+				}
+
 				log.debug("User Submitted Cookie: " + cookieValue);
 				log.debug("Stored Cookie Value  : " + userActualCookie);
 				
-				if(cookieValue.compareTo(userActualCookie) == 0)
+				if(cookieValue != "" && cookieValue.compareTo(userActualCookie) == 0)
 				{
 					//User is using their own Cookie: Not Complete
 					htmlOutput = new String("<h2 class='title'>" + bundle.getString("securityMisconfig.servlet.stealTokens.notComplete") + "</h2>"

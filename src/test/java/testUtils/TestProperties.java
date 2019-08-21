@@ -25,14 +25,16 @@ public class TestProperties
 	{
 		try 
 		{
-			File file = new File(System.getProperty("user.dir")+"/src/main/resources/database/coreSchema.sql");
+			String basePath = new File("./").getCanonicalPath();
+
+			File file = new File(basePath + "/src/main/resources/database/coreSchema.sql");
 			String data = FileUtils.readFileToString(file, Charset.defaultCharset() );
 			
 			Connection databaseConnection = Database.getDatabaseConnection(null, true);
 			Statement psProcToexecute = databaseConnection.createStatement();
 			psProcToexecute.executeUpdate(data);
 			
-			file = new File(System.getProperty("user.dir")+"/src/main/resources/database/moduleSchemas.sql");
+			file = new File(basePath + "/src/main/resources/database/moduleSchemas.sql");
 			data = FileUtils.readFileToString(file, Charset.defaultCharset() );
 			psProcToexecute = databaseConnection.createStatement();
 			psProcToexecute.executeUpdate(data);
