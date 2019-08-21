@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 
 import dbProcs.Getter;
+import org.owasp.html.Sanitizers;
 import utils.FindXSS;
 import utils.Hash;
 import utils.ShepherdLogManager;
@@ -99,7 +100,7 @@ public class XssChallengeThree extends HttpServlet
 						searchTerm +
 						"</p>";
 					log.debug("Outputting HTML");
-					out.write(htmlOutput);
+					out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
 				}
 			}
 		}

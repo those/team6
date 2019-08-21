@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 
 import dbProcs.Getter;
+import org.owasp.html.Sanitizers;
 import utils.FindXSS;
 import utils.Hash;
 import utils.ShepherdLogManager;
@@ -100,7 +101,7 @@ public class XssChallengeSix extends HttpServlet
 						"<p>" + bundle.getString("response.linkPosted") + "</p> " +
 						userPost +
 						"</p>";
-					out.write(htmlOutput);
+					out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
 				}
 			}
 		}
