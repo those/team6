@@ -85,9 +85,13 @@ public class CsrfChallengeTargetFour extends HttpServlet
 				if(ses.getAttribute(csrfTokenName) == null || ses.getAttribute(csrfTokenName).toString().isEmpty())
 				{
 					log.debug("No CSRF Token found in session");
-					storedToken = Setter.setCsrfChallengeFourCsrfToken(userId, Hash.randomString(), ApplicationRoot);
-					out.write(csrfGenerics.getString("target.noTokenNewToken") + " " + storedToken + "<br><br>");
-					ses.setAttribute(csrfTokenName, storedToken);
+
+					ses.invalidate();
+
+					//this code creates a security failure
+//					storedToken = Setter.setCsrfChallengeFourCsrfToken(userId, Hash.randomString(), ApplicationRoot);
+//					out.write(csrfGenerics.getString("target.noTokenNewToken") + " " + storedToken + "<br><br>");
+//					ses.setAttribute(csrfTokenName, storedToken);
 				}
 				else
 				{
