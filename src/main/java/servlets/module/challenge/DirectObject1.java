@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
-
+import org.owasp.html.Sanitizers;
 
 import utils.ShepherdLogManager;
 import utils.Validate;
@@ -98,7 +98,8 @@ public class DirectObject1 extends HttpServlet
 					htmlOutput = "<h2 class='title'>" + bundle.getString("response.notFound") + "</h2><p>" + bundle.getString("response.notFoundMessage.1") + " '" + Encode.forHtml(userId) + "' " + bundle.getString("response.notFoundMessage.2") + "</p>";
 				}
 				log.debug("Outputting HTML");
-				out.write(htmlOutput);
+
+				out.write(Sanitizers.FORMATTING.sanitize(htmlOutput));
 				Database.closeConnection(conn);
 			}
 			catch(Exception e)
