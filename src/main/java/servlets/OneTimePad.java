@@ -3,6 +3,7 @@ package servlets;
 import dbProcs.FileInputProperties;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * One Time pad encryption for user specific keys.
@@ -31,8 +32,7 @@ public class OneTimePad {
 	   * @param text The string that is to be encrypted
 	   * @return The resulting string from encryption
 	   */
-	  public static String encrypt(final String text) 
-	  {
+	  public static String encrypt(final String text) throws IOException {
 		  return new String(org.apache.commons.codec.binary.Base64.encodeBase64String(xor(text.getBytes())).getBytes());
 	  }
 	  
@@ -89,8 +89,7 @@ public class OneTimePad {
 	   * @param input Byte array to be XOR'd
 	   * @return
 	   */
-	  private static byte[] xor(final byte[] input) 
-	  {
+	  private static byte[] xor(final byte[] input) throws IOException {
 	    final byte[] output = new byte[input.length];
 	    final byte[] secret = getKey().getBytes();
 	    int spos = 0;
@@ -127,8 +126,9 @@ public class OneTimePad {
 	    return output;
 	  }
 
-	  public static String getKey() {
-		  String CRYPTO_PROPERTIES = System.getProperty("crypto.properties");
+	  public static String getKey() throws IOException {
+	      String basePath = new File("./").getCanonicalPath();
+		  String CRYPTO_PROPERTIES = "/src/main/resources/crypto.properties";
 
 		  return FileInputProperties.readfile(CRYPTO_PROPERTIES, "crypto.key");
 	  }
