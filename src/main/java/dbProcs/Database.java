@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 
 import org.apache.log4j.Logger;
 
+import servlets.OneTimePad;
+
 /**  
  * Used to create database connections using the FileInputProperties.readfile method to gather property information
  * Initiated by Getter.java, Setter.java
@@ -75,7 +77,7 @@ public class Database
 		   connectionURL= connectionURL + FileInputProperties.readfile(props, "databaseConnectionURL");
 		   //log.debug("Connection URL: " + connectionURL);
 		   String username=FileInputProperties.readfile(props, "databaseUsername");
-		   String password=FileInputProperties.readfile(props, "databasePassword");
+		   String password=OneTimePad.decrypt(FileInputProperties.readfile(props, "databasePassword"));
 		   
 		   conn = DriverManager.getConnection(connectionURL,username,password);
 	   }
