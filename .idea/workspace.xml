@@ -26,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeOne.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="93" column="42" lean-forward="true" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="42" />
+              <caret line="93" column="42" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -40,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/XssChallengeSix.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="305">
@@ -53,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/XssChallengeFour.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="320">
-              <caret line="109" column="20" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="42" />
+              <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -62,16 +62,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/XssChallengeTwo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="314">
-              <caret line="103" column="74" lean-forward="true" selection-start-line="103" selection-start-column="74" selection-end-line="103" selection-end-column="74" />
+              <caret line="103" column="74" selection-start-line="103" selection-start-column="74" selection-end-line="103" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/lesson/XssLesson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+            <state relative-caret-position="395">
+              <caret line="102" column="58" selection-start-line="102" selection-start-column="58" selection-end-line="102" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -89,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeSix.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="335">
-              <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
+              <caret line="94" column="42" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -98,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeThree.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="335">
-              <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
+              <caret line="94" column="42" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -107,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTwo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
+              <caret line="94" column="42" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -179,7 +179,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="182" />
     <option name="y" value="90" />
     <option name="width" value="1440" />
@@ -261,6 +261,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -292,10 +293,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1033" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="-1" width="1920" height="1033" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25506938" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25506938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -309,7 +309,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49839914" visible="true" weight="0.32893288" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49839914" visible="true" weight="0.32893288" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50160086" side_tool="true" visible="true" weight="0.32893288" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -370,28 +370,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTwo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeThree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
-          <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeSix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
-          <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeOne.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="93" column="42" lean-forward="true" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="42" />
+          <caret line="93" column="42" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -399,13 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="102" column="74" selection-start-line="102" selection-start-column="74" selection-end-line="102" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/XssChallengeSix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="103" column="74" selection-start-line="103" selection-start-column="74" selection-end-line="103" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -419,21 +412,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/XssChallengeFour.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="109" column="20" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="42" />
+          <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/XssChallengeTwo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
-          <caret line="103" column="74" lean-forward="true" selection-start-line="103" selection-start-column="74" selection-end-line="103" selection-end-column="74" />
+          <caret line="103" column="74" selection-start-line="103" selection-start-column="74" selection-end-line="103" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/lesson/XssLesson.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="102" column="58" selection-start-line="102" selection-start-column="58" selection-end-line="102" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/XssChallengeSix.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
-          <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+          <caret line="103" column="74" selection-start-line="103" selection-start-column="74" selection-end-line="103" selection-end-column="74" />
         </state>
       </provider>
     </entry>
