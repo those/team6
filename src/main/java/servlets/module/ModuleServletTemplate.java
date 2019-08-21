@@ -3,9 +3,9 @@ package servlets.module;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -18,11 +18,10 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
 
-
+import dbProcs.Database;
 import utils.Hash;
 import utils.ShepherdLogManager;
 import utils.Validate;
-import dbProcs.Database;
 
 /**
  * SQL Injection Lesson - Does not use User Specific Key
@@ -145,9 +144,10 @@ extends HttpServlet
 			//The details of this user need to be entered in a properties file in WEB-INF/challenges
 			//The Name of that user need to be entered in the following funciton;
 			Connection conn = Database.getChallengeConnection(applicationRoot, "nameOfPropertiesFile.properties");
-			Statement stmt;
-			stmt = conn.createStatement();
-			ResultSet resultSet = stmt.executeQuery("SELECT * FROM tb_users WHERE username = '" + username + "'");
+			
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM tb_users WHERE username = ?");
+			stmt.setString(1, username);
+			ResultSet resultSet = stmt.executeQuery();
 			log.debug("Opening Result Set from query");
 			for(int i = 0; resultSet.next(); i++)
 			{

@@ -213,7 +213,9 @@ public class SessionManagement6SecretQuestion extends HttpServlet
 							{
 								Connection conn = Database.getChallengeConnection(ApplicationRoot, "BrokenAuthAndSessMangChalSix");
 								log.debug("Getting Secret Question");
-								PreparedStatement callstmt = conn.prepareStatement("SELECT secretQuestion FROM users WHERE userAddress = \"" + subEmail +"\"");
+								PreparedStatement callstmt = conn.prepareStatement("SELECT secretQuestion FROM users WHERE userAddress = ?");
+								callstmt.setString(1, subEmail);
+								
 								ResultSet rs = callstmt.executeQuery();
 								if(rs.next())
 								{

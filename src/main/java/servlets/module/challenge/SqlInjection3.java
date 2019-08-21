@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
 
+import com.mysql.jdbc.PreparedStatement;
 
 import utils.ShepherdLogManager;
 import utils.SqlFilter;
@@ -90,9 +91,10 @@ public class SqlInjection3 extends HttpServlet
 				
 				log.debug("Getting Connection to Database");
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeThree");
-				Statement stmt = conn.createStatement();
+				PreparedStatement stmt = (PreparedStatement)conn.prepareStatement("SELECT customerName FROM customers WHERE customerName = ?");
+				stmt.setString(1, theUserName);
 				log.debug("Gathering result set");
-				ResultSet resultSet = stmt.executeQuery("SELECT customerName FROM customers WHERE customerName = '" + theUserName + "'");
+				ResultSet resultSet = stmt.executeQuery();
 		
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.searchResults")+ "</h2>";;
